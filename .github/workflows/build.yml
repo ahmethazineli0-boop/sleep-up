@@ -11,6 +11,8 @@ jobs:
   ios:
     name: iPhone (.ipa)
     runs-on: macos-15
+    permissions:
+      contents: write
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +44,17 @@ jobs:
           name: SleepUp-iPhone
           path: SleepUp.ipa
           retention-days: 30
+
+      # Herkese açık indirme bağlantısı:
+      # https://github.com/<kullanıcı>/sleep-up/releases/latest/download/SleepUp.ipa
+      - name: Sürüm olarak yayınla
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Deneme sürümü ${{ github.run_number }}
+          files: SleepUp.ipa
+          make_latest: true
 
   android:
     name: Android (.apk)
