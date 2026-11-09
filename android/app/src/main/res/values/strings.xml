@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_description">Sleep Up, belirlediğin uyku saatinde seçtiğin uygulamalar açıldığında kilit ekranını gösterir. Yalnızca hangi uygulamanın ön planda olduğunu algılar; ekran içeriğini, yazdıklarını veya kişisel verilerini okumaz, saklamaz ve paylaşmaz.</string>
+    <string name="accessibility_summary">Uyku saatinde uygulama kilidi</string>
+</resources>
